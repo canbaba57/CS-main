@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "CaseStudy.API\\CaseStudy.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CaseStudy.Frontend\\CaseStudy.Frontend.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
