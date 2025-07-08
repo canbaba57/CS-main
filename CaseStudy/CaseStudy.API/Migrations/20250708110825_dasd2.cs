@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -7,7 +8,7 @@
 namespace CaseStudy.API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class dasd2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,14 +17,14 @@ namespace CaseStudy.API.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    popularityScore = table.Column<double>(type: "float", nullable: false),
-                    weight = table.Column<double>(type: "float", nullable: false),
-                    yellowimage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    roseimage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    whiteimage = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    name = table.Column<string>(type: "text", nullable: false),
+                    popularityScore = table.Column<double>(type: "double precision", nullable: false),
+                    weight = table.Column<double>(type: "double precision", nullable: false),
+                    yellowimage = table.Column<string>(type: "text", nullable: false),
+                    roseimage = table.Column<string>(type: "text", nullable: false),
+                    whiteimage = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

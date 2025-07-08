@@ -12,7 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ProductContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("Local"));
+    //opt.UseSqlServer(builder.Configuration.GetConnectionString("Local"));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("Local"));
 });
 builder.Services.AddControllers();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
